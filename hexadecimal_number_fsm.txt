@@ -1,0 +1,56 @@
+// HEXADECIMAL NUMBER (INT OR FLOAT)
+
+digraph finite_state_machine {
+    fontname="Helvetica,Arial,sans-serif"
+    nodesep=0.75
+    // ranksep=0.5
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=12]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=12 arrowsize=0.75]
+    rankdir=LR;
+    node [shape = doublecircle]; 100 210 220 230 400 800 810 820;
+    node [shape = circle];
+
+    Start -> 10 [label = "0"];
+
+    10 -> 20 [label = "x"];
+
+    20 -> 30  [label = "_"];
+    20 -> 100 [label = "0-9 | A-F | a-f"];
+    20 -> 300 [label = "(.)"];
+
+    30 -> 100 [label = "0-9 | A-F | a-f"];
+
+    100 -> 100 [label = "0-9 | A-F | a-f"];
+    100 -> 200 [label = "_"];
+    100 -> 300 [label = "(.)"];
+    100 -> 210 [label = "L"];
+    100 -> 220 [label = "u"];
+    100 -> 600 [label = "p"];
+
+    200 -> 100 [label = "0-9 | A-F | a-f"];
+    200 -> 210 [label = "L"];
+    200 -> 220 [label = "u"];
+    200 -> 600 [label = "p"];
+
+    210 -> 230 [label = "u"];
+
+    220 -> 230 [label = "L"];
+
+    300 -> 400 [label = "0-9 | A-F | a-f"];
+
+    400 -> 400 [label = "0-9 | A-F | a-f"];
+    400 -> 500 [label = "_"];
+    400 -> 600 [label = "p"];
+
+    500 -> 400 [label = "0-9 | A-F | a-f"];
+    500 -> 600 [label = "p"];
+
+    600 -> 700 [label = "+ | -"];
+    600 -> 800 [label = "0-9"];
+
+    700 -> 800 [label = "0-9"];
+
+    800 -> 800 [label = "0-9"];
+    800 -> 810 [label = "d"];
+    800 -> 820 [label = "f"];
+}

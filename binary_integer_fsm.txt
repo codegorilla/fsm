@@ -1,0 +1,34 @@
+// BINARY INTEGER
+
+digraph finite_state_machine {
+    fontname="Helvetica,Arial,sans-serif"
+    nodesep=0.5
+    // ranksep=0.5
+    node [fontname="Helvetica,Arial,sans-serif" fontsize=12]
+    edge [fontname="Helvetica,Arial,sans-serif" fontsize=12 arrowsize=0.75]
+    rankdir=LR;
+    node [shape = doublecircle]; 400 600 700 800;
+    node [shape = circle];
+
+    Start -> 100 [label = "0"];
+
+    100 -> 200 [label = "b"];
+
+    200 -> 400 [label = "0-1"];
+    200 -> 300 [label = "_"];
+    
+    300 -> 400 [label = "0-1"];
+
+    400 -> 400 [label = "0-1"];
+    400 -> 500 [label = "_"];
+    400 -> 600 [label = "L"];
+    400 -> 700 [label = "u"];
+
+    500 -> 400 [label = "0-1"];
+    500 -> 600 [label = "L"];
+    500 -> 700 [label = "u"];
+
+    600 -> 800 [label = "u"];
+
+    700 -> 800 [label = "L"];
+}
